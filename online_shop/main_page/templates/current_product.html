@@ -1,0 +1,12 @@
+Name: {{ result_product }}<br>
+Description of product: {{ result_product.product_description}}<br>
+Price: {{ result_product.product_price }}<br>
+Left: {{ result_product.product_quantity }}<br>
+
+<form action="/add_product/{{ result_product.id }}" method="post">
+    {% csrf_token %}
+    <input type="number" min="1" max="{{current_product.product_quantity}}" name="count">
+
+    <button>Cart</button>
+</form>
+<h1></h1>
